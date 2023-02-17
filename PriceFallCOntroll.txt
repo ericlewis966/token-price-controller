@@ -1,0 +1,59 @@
+slab1= 0 -10%       2.5%
+slab2= 10-15%        15%
+slab3= 15-20%        20%
+slab3= 20-25%        25%
+slab4= above 25%     40%
+##############################
+
+//it will run continuously
+last_tax=2.5;
+price_change_event_listener(){
+	price_change = getPricechange();
+	if(price_change<=0 && price_change> -10){
+		if(last_tax == 2.5){
+			//Do nothing
+		}else{
+		  //call smart contract to set tax to 2.5
+		  last_tax =2.5;
+		  //send Notification to telegram group via api
+		}
+	}
+	if(price_change<=-10 && price_change> -15){
+		if(last_tax == 15){
+			//Do nothing
+		}else{
+		  //call smart contract to set tax to 15
+		  last_tax =15;
+		  //send Notification to telegram group via api
+		}
+	}
+	
+	if(price_change <=-15 && price_change> -20){
+		if(last_tax == 20){
+			//Do nothing
+		}else{
+		  //call smart contract to set tax to 20
+		  last_tax =20;
+		  //send Notification to telegram group via api
+		}
+	}
+	if(price_change <=-20 && price_change> -25){
+		if(last_tax == 25){
+			//Do nothing
+		}else{
+		  //call smart contract to set tax to 25
+		  last_tax =25;
+		  //send Notification to telegram group via api
+		}
+	}
+	if(price_change <=-25){
+		if(last_tax == 40){
+			//Do nothing
+		}else{
+		  //call smart contract to set tax to 40
+		  last_tax =40;
+		  //send Notification to telegram group via api
+		}
+	}
+
+}
